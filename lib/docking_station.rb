@@ -31,6 +31,10 @@ class DockingStation
     
     def dock_empty?
         @bikes.empty?
-    end    
+    end
+
+    def bike_is_broken?(bike)
+        !bike.working?
+    end
 
 end
