@@ -1,23 +1,23 @@
 require './lib/bike.rb'
 
 describe Bike do
-    it { is_expected.to respond_to :working? }
+    it { is_expected.to respond_to :broken? }
 
-    describe '#working?' do
-        it 'returns true if the bike is working' do
-            expect(subject.working?).to eq true
+    describe '#broken?' do
+        it 'returns false if the bike is not broken' do
+            expect(subject.broken?).to eq false
         end
 
-        it 'returns false if the bike is not working' do
+        it 'returns true if the bike is broken' do
             subject.report_broken
-            expect(subject.working?).to eq false
+            expect(subject.broken?).to eq true
         end
     end
 
     describe '#report_broken' do
         it "allows a user to report a bike as not working" do
             subject.report_broken
-            expect(subject.working?).to eq false
+            expect(subject.broken?).to eq true
         end    
     end
 
