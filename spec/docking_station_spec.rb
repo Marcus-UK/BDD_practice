@@ -10,7 +10,7 @@ describe DockingStation do
             expect(subject.release_bike).to eq bike
         end
 
-        it 'will not release a bike if none are available'do
+        it 'will not release a bike if none are available' do
             expect { subject.release_bike }.to raise_error 'no bikes available'
         end
     end
